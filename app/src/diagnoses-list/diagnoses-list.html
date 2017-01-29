@@ -1,0 +1,52 @@
+<div class="content-panel content-panel_type-diagnoses-list">
+    <div class="content-panel__header">Current Diagnoses</div>
+
+    <div class="diagnoses-list-empty" ng-if="!patient.diagnoses.length">No Diagnoses</div>
+
+    <div class="diagnoses-list diagnoses-list_type-current" ng-show="patient.diagnoses.length">
+        <div class="diagnoses-list__header">
+            <div class="diagnoses-list__code">Code</div>
+            <div class="diagnoses-list__diagnosis">Diagnosis</div>
+            <div class="diagnoses-list__addition-date">Addition Date</div>
+            <div class="diagnoses-list__actions"></div>
+        </div>
+
+        <div class="diagnoses-list__body">
+            <div class="diagnoses-list__item" ng-repeat="diagnos in patient.diagnoses">
+                <div class="diagnoses-list__code" ng-bind="diagnos.code"></div>
+                <div class="diagnoses-list__diagnosis" ng-bind="diagnos.diagnosis"></div>
+                <div class="diagnoses-list__addition-date" ng-bind="diagnos.additionDate"></div>
+                <div class="diagnoses-list__actions">
+                    <div class="diagnoses-list__action-edit" ui-sref="edit-diagnos({id:$index})"></div>
+                    <div class="diagnoses-list__action-remove" ng-click="remove(diagnos)"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="content-panel content-panel_type-diagnoses-list">
+    <div class="content-panel__header">Diagnoses History:</div>
+
+    <div class="diagnoses-list-empty diagnoses-list-empty_type-history" ng-if="!patient.diagnosesHistory.length">No Diagnoses</div>
+
+    <div class="diagnoses-list diagnoses-list_type-history" ng-show="patient.diagnosesHistory.length">
+        <div class="diagnoses-list__header">
+            <div class="diagnoses-list__code">Code</div>
+            <div class="diagnoses-list__diagnosis">Diagnosis</div>
+            <div class="diagnoses-list__addition-date">Addition Date</div>
+            <div class="diagnoses-list__removal-date">Removal Date</div>
+        </div>
+
+        <div class="diagnoses-list__body">
+            <div class="diagnoses-list__item" ng-repeat="diagnos in patient.diagnosesHistory">
+                <div class="diagnoses-list__code" ng-bind="diagnos.code"></div>
+                <div class="diagnoses-list__diagnosis" ng-bind="diagnos.diagnosis"></div>
+                <div class="diagnoses-list__addition-date" ng-bind="diagnos.additionDate"></div>
+                <div class="diagnoses-list__removal-date" ng-bind="diagnos.removalDate"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

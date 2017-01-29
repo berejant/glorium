@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patients clinical - Albert Johnson - Edit patient</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" href="../dist/build.css">
+</head>
+<body>
+
+    <nav class="main-navbar">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Patient Info</a></li>
+                <li class="active"><a href="#">Clinical Info</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Insurance</a></li>
+                <li><a href="#">Compliance</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Service plan</a></li>
+                <li><a href="#">Documents</a></li>
+                <li><a href="#">Integration</a></li>
+                <li><a href="#">Equipment</a></li>
+                <li><a href="#">Orders</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="layout">
+
+        <div class="patient-sidebar">
+            <div class="patient-sidebar__name">
+                <span class="patient-sidebar__name-value">Albert Johnson</span>
+
+                <div class="patient-sidebar__edit"></div>
+            </div>
+
+            <div class="patient-sidebar__birthday">
+                <div class="patient-sidebar__birthday-label">Birthday:</div>
+                <div class="patient-sidebar__birthday-value">12/12/1957</div>
+            </div>
+
+            <div class="patient-sidebar__full-address-label">Full Address:</div>
+            <div class="patient-sidebar__full-address-value">
+                4 Newman Street, Metuchen, Middlesex, New Jersey, 08840
+            </div>
+        </div>
+
+        <ol class="breadcrumb">
+            <li><a href="#">Patients</a></li>
+            <li class="active">Albert E Johnson</li>
+        </ol>
+
+        <div class="layout-content">
+
+            <div class="content-panel content-panel_type-current">
+                <div class="content-panel__header">Edit Patient:</div>
+
+                <form class="form form_edit-patient">
+                    <div class="form__row">
+                        <div class="form__form-group form__form-group_field_name">
+                            <label for="edit-patient_name">Patient Name: *</label>
+                            <input type="text" class="form__form-control" id="edit-patient_name"
+                                   placeholder="Patient name" value="Albert Johnson">
+                        </div>
+
+                        <div class="form__form-group form__form-group_field_birthday">
+                            <label for="edit-patient_birthday">DOB: *</label>
+                            <input type="text" class="form__form-control" id="edit-patient_birthday"
+                                   placeholder="__/__/____" value="12/12/1957">
+                        </div>
+                    </div>
+
+                    <div class="form__row">
+                        <div class="form__form-group">
+                            <label for="edit-patient_address">Full address: *</label>
+                            <input type="text" class="form__form-control" id="edit-patient_address"
+                                   placeholder="Full address" value="4 Newman Street, Metuchen, Middlesex, New Jersey, 08840">
+                        </div>
+                    </div>
+
+                    <div class="form__row form__row_footer">
+                        <div class="form__form-group">
+                            <button type="submit" class="form__btn-submit">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="add-new-diagnose-button"></div>
+    </div>
+
+</body>
+</html>

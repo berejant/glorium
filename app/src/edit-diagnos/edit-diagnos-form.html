@@ -1,0 +1,31 @@
+<div class="content-panel content-panel_type-current">
+    <div class="content-panel__header">
+        <span ng-if="isNew">Add New Diagnos:</span>
+        <span ng-if="!isNew">Edit Diagnos #<span ng-bind="diagnos.code"></span>:</span>
+    </div>
+
+    <form class="form form_edit-diagnos" name="diagnosForm" ng-submit="save($event);">
+        <div class="form__row">
+            <div class="form__form-group form__form-group_field_code">
+                <label for="edit-diagnos_code">Code: *</label>
+                <input type="text" class="form__form-control" id="edit-diagnos_code" name="code"
+                       placeholder="Code" ng-model="diagnos.code" pattern="[0-9]{6,}" required>
+            </div>
+
+        </div>
+
+        <div class="form__row">
+            <div class="form__form-group">
+                <label for="edit-diagnos_diagnosis">Diagnos: *</label>
+                <input type="text" class="form__form-control" id="edit-diagnos_diagnosis" name="diagnosis"
+                       placeholder="Diagnos" ng-model="diagnos.diagnosis" required>
+            </div>
+        </div>
+
+        <div class="form__row form__row_footer">
+            <div class="form__form-group">
+                <button type="submit" class="form__btn-submit">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

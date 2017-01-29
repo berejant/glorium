@@ -1,0 +1,56 @@
+body, html {
+  height: 100%;
+}
+
+.layout {
+  height: 100%;
+  margin-top: -@navbar-height;
+  padding-top: @navbar-height;
+  padding-left: @patient-sidebar-width;
+}
+
+.layout-content {
+  .make-row();
+}
+
+.add-new-diagnose-button:extend(.glyphicon) {
+  .glyphicon-plus-sign;
+  position: absolute;
+  top: 20px;
+  right: 13px;
+  font-size: 39px;
+  color: #000;
+  background-color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: 36px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+
+  &:before {
+    margin-left: -2px;
+  }
+}
+
+.content-panel {
+  .make-xs-column(12);
+
+  .content-panel__header {
+    background-color: #3dbafc;
+    padding-left: 30px;
+    height: 54px;
+    line-height: 54px;
+    color: #fafafa;
+    font-size: 18px;
+  }
+
+  &.content-panel_type-history {
+    .content-panel__header {
+      background-color: #64c8fd;
+    }
+  }
+
+}

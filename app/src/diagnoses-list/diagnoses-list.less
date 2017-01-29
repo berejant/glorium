@@ -1,0 +1,117 @@
+.content-panel.content-panel_type-diagnoses-list {
+  .make-lg-column(6);
+}
+
+.diagnoses-list-empty {
+  text-align: center;
+  line-height: 55px;
+  vertical-align: middle;
+  font-size: 15px;
+
+  &.diagnoses-list-empty_type-history {
+    @media (min-width: @screen-lg-min) {
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+.diagnoses-list {
+  display: table;
+  width: 100.2%;
+
+  .diagnoses-list__header, .diagnoses-list__item {
+    display: table-row;
+  }
+
+  .diagnoses-list__header {
+    height: 55px;
+    line-height: 55px;
+    background-color: #e8e8e8;
+    font-size: 13px;
+  }
+
+  .diagnoses-list__item {
+    min-height: 70px;
+
+    & + .diagnoses-list__item > * {
+      border-top: 1px solid #e8e8e8;
+    }
+  }
+
+  .diagnoses-list__body {
+    display: table-row-group;
+    font-size: 14px;
+    line-height: 34px;
+  }
+
+  .diagnoses-list__header > * {
+    display: table-cell;
+    box-sizing: border-box;
+  }
+
+  .diagnoses-list__item > * {
+    display: table-cell;
+    box-sizing: border-box;
+    padding: 20px 0 25px 0;
+    vertical-align: top;
+  }
+
+  .diagnoses-list__code {
+    max-width: 128px;
+    min-width: 75px;
+    width: 15%;
+    padding-left: 30px;
+  }
+
+  .diagnoses-list__diagnosis {
+    padding-right: 15px;
+    line-height: 18px;
+    vertical-align: middle;
+  }
+
+  .diagnoses-list__addition-date {
+    max-width: 165px;
+    min-width: 90px;
+    width: 18%;
+  }
+
+  .diagnoses-list__removal-date {
+    max-width: 155px;
+    min-width: 90px;
+    width: 18%;
+  }
+
+  .diagnoses-list__actions {
+    width: 90px;
+    line-height: 18px;
+  }
+
+  .diagnoses-list__action-edit:extend(.glyphicon) {
+    .glyphicon-pencil;
+    font-size: 18px;
+    line-height: 31px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #cccccc;
+    vertical-align: top;
+  }
+
+  .diagnoses-list__action-remove:extend(.glyphicon) {
+    .glyphicon-remove-sign;
+    font-size: 18px;
+    line-height: 34px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: #ff4646;
+    vertical-align: bottom;
+  }
+
+  &.diagnoses-list_type-history {
+    .diagnoses-list__item {
+      @media (min-width: @screen-lg-min) {
+        background-color: #f1f1f1;
+      }
+    }
+  }
+}
+

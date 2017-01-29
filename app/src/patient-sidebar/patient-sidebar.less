@@ -1,0 +1,48 @@
+@patient-sidebar-width: 256px;
+
+.patient-sidebar {
+  width: @patient-sidebar-width;
+  margin: 0 -@patient-sidebar-width;
+  height: 100%;
+  background: #646464;
+  float: left;
+
+  padding: 30px 16px 0 20px;
+  color: #fff;
+
+  @infinityBottom: 10000px;
+  padding-bottom: @infinityBottom;
+  margin-bottom: -@infinityBottom;
+  overflow: hidden;
+
+
+  .patient-sidebar__name {
+      font-size: 26px;
+      line-height: 26px;
+      margin-bottom: 26px;
+      letter-spacing: 0.4px;
+  }
+
+  .patient-sidebar__edit:extend(.glyphicon) {
+    .glyphicon-pencil;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-top: 7px;
+  }
+
+  .patient-sidebar__birthday {
+    margin-bottom: 28px;
+  }
+
+  .patient-sidebar__birthday-label, .patient-sidebar__full-address-label {
+    font-size: 12px;
+  }
+
+  .patient-sidebar__birthday-value, .patient-sidebar__full-address-value {
+    font-size: 14px;
+    line-height: 21px;
+    height: 21px;
+  }
+
+}

@@ -1,0 +1,15 @@
+<div class="patient-sidebar">
+    <div class="patient-sidebar__name">
+        <span class="patient-sidebar__name-value" ng-bind="patient.name"></span>
+
+        <div class="patient-sidebar__edit" ui-sref="edit-patient"></div>
+    </div>
+
+    <div class="patient-sidebar__birthday">
+        <div class="patient-sidebar__birthday-label">Birthday:</div>
+        <div class="patient-sidebar__birthday-value" ng-bind="patient.birthday"></div>
+    </div>
+
+    <div class="patient-sidebar__full-address-label">Full address:</div>
+    <div class="patient-sidebar__full-address-value" ng-bind="patient.fullAddress"></div>
+</div>

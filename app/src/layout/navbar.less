@@ -1,0 +1,43 @@
+@navbar-inverse-bg: #3dbafc;
+@navbar-inverse-link-color: #148ccb;
+
+@navbar-padding-vertical: 0;
+@navbar-inverse-link-active-bg: none;
+
+@navbar-padding-horizontal: 10px;
+
+@navbar-height: 37px;
+
+.main-navbar {
+  &:extend(.navbar);
+  .navbar-inverse;
+
+  min-height: @navbar-height;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0 0 3px rgba(10, 10, 10, 0.85);
+  margin-bottom: 0;
+
+  .navbar-nav > li {
+    text-transform: uppercase;
+    font-weight: 600;
+    float: left;
+  }
+
+  .navbar-nav > li > a {
+    height: 37px;
+    line-height: 37px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .navbar-nav > .active > a {
+    border-bottom: 3px #fff solid;
+  }
+
+  .collapse {
+    display: block;
+    visibility: visible;
+  }
+
+}
