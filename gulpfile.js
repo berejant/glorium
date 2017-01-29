@@ -8,6 +8,7 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var sourceMaps = require('gulp-sourcemaps');
 var cleanCSS = require('gulp-clean-css');
 var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 
 // for js, webpack
 var webpack = require('gulp-webpack');
@@ -40,10 +41,18 @@ gulp.task('css', function () {
         .pipe(rename(production ? 'build.min.css' : 'build.css'));
 
     if(production) {
-        stream = stream.pipe(cleanCSS({
-            compatibility: 'ie8',
-            keepSpecialComments : 0
-        }));
+        stream = stream.pipe(
+            cleanCSS({
+                compatibility: 'ie8',
+                processImport: [
+                    '!fonts.googleapis.com',
+                    ],
+                keepSpecialComments : 0
+
+            })
+
+        ).pipe(replace('http://', 'https://'));
+
     } else {
         stream = stream.pipe(sourceMaps.write('.'));
     }
