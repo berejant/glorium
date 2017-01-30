@@ -44,9 +44,8 @@ gulp.task('css', function () {
         stream = stream.pipe(
             cleanCSS({
                 compatibility: 'ie8',
-                processImport: [
-                    '!fonts.googleapis.com',
-                    ],
+                timeout: 30,
+                processImport: false,
                 keepSpecialComments : 0
 
             })
@@ -166,12 +165,14 @@ gulp.task('fonts', function () {
 
 gulp.task('build', ['css', 'js', 'fonts']);
 
-gulp.task('watch', function () {
+gulp.task('browser-sync', function () {
     browserSync.init({
         open: false,
         server: "./app"
     });
+});
 
+gulp.task('watch', ['browser-sync'], function () {
     gulp.watch('app/src/**/*.less', ['css']);
 
     webpackWatch = true;

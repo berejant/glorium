@@ -39129,8 +39129,6 @@
 	                diagnos: diagnos
 	            }
 	        }).then(function(modal) {
-	            modal.element.css('display', 'block');
-	
 	            return modal.close;
 	        }).then(function(confirmResult) {
 	            if(confirmResult) {
@@ -39144,12 +39142,13 @@
 	
 	.controller('ConfirmRemoveDiagnosModalController', ['$scope', '$element', 'close', 'diagnos',
 	    function ($scope, $element, close, diagnos) {
-	    $scope.diagnos = diagnos;
+	        $element.css('display', 'block');
+	        $scope.diagnos = diagnos;
 	
-	    $scope.close = function(result) {
-	        $element.css('display', 'none');
-	        close(result, 50); // close, but give 500ms for bootstrap to animate
-	    };
+	        $scope.close = function(result) {
+	            $element.css('display', 'none');
+	            close(result, 50); // close, but give 500ms for bootstrap to animate
+	        };
 	}]);
 
 
